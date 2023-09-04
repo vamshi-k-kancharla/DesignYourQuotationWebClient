@@ -41,10 +41,11 @@ var GlobalWebClientModule = (function () {
 
 
 
+
     // House Structure Form Input Data
 
     var structureFormInputData_InputLabels = ["Aggregates", "RCC Design Mix", "Ceiling Height", "Steel", "Cement", "Bricks"];
-    var structureFormInputData_InputIds = ["Aggregates", "RCC_Design_Mix", "Ceiling Height", "Steel", "Cement", "Bricks"];
+    var structureFormInputData_InputIds = ["Aggregates", "RCC_Design_Mix", "Ceiling_Height", "Steel", "Cement", "Bricks"];
     var structureFormInputData_InputTypes = ["text", "select", "text", "select", "select", "select"];
     var structureFormInputData_SelectInputInvokeFunctions = [null, null, null, null, null, null];
     var structureFormLayoutRatio = ["2", "8", "col-sm-1"];
@@ -105,6 +106,16 @@ var GlobalWebClientModule = (function () {
     var miscellaneousFormInputData_SelectInputInvokeFunctions = [null, null, null, null];
     var miscellaneousFormLayoutRatio = ["2", "8", "col-sm-1"];
 
+
+    // Current User Context : Local cache
+
+    var pdfDimensions_DistanceBetweenLines = 8;
+    var pdfDimensions_LineStart = 20;
+    var pdfDimensions_LineWidth = 175;
+    var pdfDimensions_NumberOfCharsInALine = 56;
+    var pdfDimensions_DistanceBetweenLinesAfterHeading = 15;
+
+    var currentLine_Y_Coordinate = 30;
 
 
 
@@ -237,6 +248,17 @@ var GlobalWebClientModule = (function () {
         miscellaneousFormInputData_SelectInputInvokeFunctions: miscellaneousFormInputData_SelectInputInvokeFunctions,
         miscellaneousFormLayoutRatio: miscellaneousFormLayoutRatio,
 
+
+
+        // Current Context : Write to pdf generic parameters and contextual params
+
+        pdfDimensions_DistanceBetweenLines: pdfDimensions_DistanceBetweenLines,
+        pdfDimensions_LineStart: pdfDimensions_LineStart,
+        pdfDimensions_LineWidth: pdfDimensions_LineWidth,
+        pdfDimensions_NumberOfCharsInALine: pdfDimensions_NumberOfCharsInALine,
+        pdfDimensions_DistanceBetweenLinesAfterHeading: pdfDimensions_DistanceBetweenLinesAfterHeading,
+
+        currentLine_Y_Coordinate: currentLine_Y_Coordinate,
 
 
 
