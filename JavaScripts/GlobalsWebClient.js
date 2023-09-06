@@ -8,22 +8,17 @@ var GlobalWebClientModule = (function () {
     var webServerPrefix = "http://127.0.0.1:4501/?";
     var imageResourcePath = "./Resources/Pictures/";
 
-    // Current User Context : Local cache
+    // PDF doc Util : Local cache
 
-	var currentUserName_Key = "currentUserName";
-	var currentBudget_Id_Key = "currentBudget_Id";
-	var currentExpense_Category_Key = "currentExpense_Category";
-    var currentExpense_SubCategory_Key = "currentExpense_SubCategory";
+    // To do : pdfDoc object instatiation and usage across multiple files
+    //         Option1 : cache,
+    //         Option2 : global variable,
+    //         Option3 : import from other file
+    //         Option4 : Open an exclusive jsPDF from an existing pdf file.
+    //         Optoin5 : usual fall back option : store the values in cache and write and save them for the last file in
+    //         sequence.
 
-    // Budget Types
-
-    var budgetTypes = ["monthly", "yearly", "festiveseason", "occasional", "vacation", "unplanned"];
-    var budgetType_ImageNames = ["BudgetType_Monthly.jpg", "BudgetType_Yearly.jpg", "BudgetType_FestiveSeason.jpg",
-        "BudgetType_Occasional.jpg", "BudgetType_Vacation.jpg", "BudgetType_Unplanned.jpg"];
-    var budgetDetailsPageName = ["./Categories.html"];
-
-    var budgetRecordKeys_ForDisplay = ["Budget_Id", "BudgetName", "Place", "StartDate", "EndDate", "Amount"];
-    var budgetRecordKeys_ToCheckAuthenticity = ["Budget_Id", "BudgetName"];
+    var pdfDoc;
 
     // Form Data Input Ids, Keys & Validation Reqs
 
@@ -152,18 +147,13 @@ var GlobalWebClientModule = (function () {
 
         // Current User Context : Local cache
 
-		currentUserName_Key : currentUserName_Key,
-		currentBudget_Id_Key : currentBudget_Id_Key,
-		currentExpense_Category_Key : currentExpense_Category_Key,
-        currentExpense_SubCategory_Key: currentExpense_SubCategory_Key,
+		//currentUserName_Key : currentUserName_Key,
 
-        // Budget Related Parameters
 
-        budgetTypes: budgetTypes,
-        budgetType_ImageNames: budgetType_ImageNames,
-        budgetDetailsPageName: budgetDetailsPageName,
-        budgetRecordKeys_ForDisplay: budgetRecordKeys_ForDisplay,
-        budgetRecordKeys_ToCheckAuthenticity: budgetRecordKeys_ToCheckAuthenticity,
+
+        // Pdf Utils Document
+
+        pdfDoc: pdfDoc,
 
 
 
