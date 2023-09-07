@@ -9,31 +9,14 @@ var PdfWriteDataUtilsModule = (function () {
 
     function saveHouseStructureQuotationInput(){
 
-        /* Experment : To Do
-         * 
-         * figure out bold, italic, underline options.
-         * figure out save to a specific location.
-         * 
-        */
-
-
-        const { jsPDF } = window.jspdf;
-        GlobalWebClientModule.pdfDoc = new jsPDF();
-
-        window.localStorage.setItem("pdfDocObject", GlobalWebClientModule.pdfDoc);
-
-        printDesignsAndDrawingsItem(GlobalWebClientModule.pdfDoc);
+        printDesignsAndDrawingsItem();
 
         alert("All the Required Input Values are present in the Quotation");
 
-        printHouseStructureItem(GlobalWebClientModule.pdfDoc);
+        printHouseStructureItem();
 
+        location.assign("./Kitchen.html");
 
-        /*
-        alert("Finished printing House Structure Item");
-
-        GlobalWebClientModule.pdfDoc.save("SimpleQuotation.Pdf");
-        */
     }
 
     /**
@@ -44,7 +27,103 @@ var PdfWriteDataUtilsModule = (function () {
 
     function saveKitchenQuotationInput() {
 
-        printKitchenItem(GlobalWebClientModule.pdfDoc);
+        printKitchenItem();
+
+        alert("Finished printing Kitchen Items");
+
+        location.assign("./Bathroom.html");
+    }
+
+
+    /**
+    * 
+    * Takes care of quotation details Addition
+    *
+    */
+
+    function saveBathRoomQuotationInput() {
+
+        printBathRoomItem();
+
+        alert("Finished printing BathRoom Items");
+
+        location.assign("./DoorsAndWindows.html");
+
+    }
+
+    /**
+    * 
+    * Takes care of quotation details Addition
+    *
+    */
+
+    function saveDoorsAndWindowsQuotationInput() {
+
+        printDoorsAndWindowsItem();
+
+        alert("Finished printing Doors & Windows Items");
+
+        location.assign("./Painting.html");
+
+    }
+
+    /**
+    * 
+    * Takes care of quotation details Addition
+    *
+    */
+
+    function savePaintingQuotationInput() {
+
+        printPaintingItem();
+
+        alert("Finished printing Painting Items");
+
+        location.assign("./Flooring.html");
+
+    }
+
+    /**
+    * 
+    * Takes care of quotation details Addition
+    *
+    */
+
+    function saveFlooringQuotationInput() {
+
+        printFlooringItem();
+
+        alert("Finished printing flooring Items");
+
+        location.assign("./Electrical.html");
+
+    }
+
+    /**
+    * 
+    * Takes care of quotation details Addition
+    *
+    */
+
+    function saveElectricalQuotationInput() {
+
+        printElectricalItem();
+
+        alert("Finished printing Electrical Items");
+
+        location.assign("./Miscellaneous.html");
+
+    }
+
+    /**
+    * 
+    * Takes care of quotation details Addition
+    *
+    */
+
+    function saveMiscellaneousQuotationInput() {
+
+        printMiscellaneousItem();
 
         const { jsPDF } = window.jspdf;
         const pdfDoc = new jsPDF();
@@ -53,8 +132,18 @@ var PdfWriteDataUtilsModule = (function () {
         printGenericParagraphItem("DesignsAndDrawingObject", 4, pdfDoc);
         printGenericParagraphItem("HouseStructureObject", 6, pdfDoc);
         printGenericParagraphItem("KitchenObject", 4, pdfDoc);
+        printGenericParagraphItem("BathRoomObject", 4, pdfDoc);
 
-        alert("Finished printing Kitchen Items");
+        pdfDoc.addPage("a4", "portrait");
+        GlobalWebClientModule.currentLine_Y_Coordinate = GlobalWebClientModule.newPage_Y_Coordinate;
+
+        printGenericParagraphItem("DoorsAndWindowsObject", 4, pdfDoc);
+        printGenericParagraphItem("PaintingObject", 2, pdfDoc);
+        printGenericParagraphItem("FlooringObject", 5, pdfDoc);
+        printGenericParagraphItem("ElectricalObject", 2, pdfDoc);
+        printGenericParagraphItem("MiscellaneousObject", 4, pdfDoc);
+
+        alert("Finished Printing Miscellaneous Items");
 
         pdfDoc.save("SimpleQuotation.Pdf");
 
@@ -66,7 +155,7 @@ var PdfWriteDataUtilsModule = (function () {
     *
     */
 
-    function printDesignsAndDrawingsItem(pdfDoc) {
+    function printDesignsAndDrawingsItem() {
 
         window.localStorage.setItem("DesignsAndDrawingObject.Heading", "Design & Drawings");
         window.localStorage.setItem("DesignsAndDrawingObject.Line.0", "Architectural Layout");
@@ -74,8 +163,11 @@ var PdfWriteDataUtilsModule = (function () {
         window.localStorage.setItem("DesignsAndDrawingObject.Line.2", "Structural Design");
         window.localStorage.setItem("DesignsAndDrawingObject.Line.3", "3d Elevation");
 
-        alert("check in same function Heading :=> " + window.localStorage.getItem("DesignsAndDrawingObject.Heading"));
-        alert("check in same function Line 0 :=> " + window.localStorage.getItem("DesignsAndDrawingObject.Line.0"));
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("check in same function Heading :=> " + window.localStorage.getItem("DesignsAndDrawingObject.Heading"));
+            alert("check in same function Line 0 :=> " + window.localStorage.getItem("DesignsAndDrawingObject.Line.0"));
+        }
 
     }
 
@@ -85,7 +177,7 @@ var PdfWriteDataUtilsModule = (function () {
     *
     */
 
-    function printHouseStructureItem(pdfDoc) {
+    function printHouseStructureItem() {
 
 
         window.localStorage.setItem("HouseStructureObject.Heading", "House Structure");
@@ -112,11 +204,14 @@ var PdfWriteDataUtilsModule = (function () {
     *
     */
 
-    function printKitchenItem(pdfDoc) {
+    function printKitchenItem() {
 
-        alert("check in different function Heading :=> " + window.localStorage.getItem("HouseStructureObject.Heading"));
-        alert("check in different function Line 0 :=> " + window.localStorage.getItem("HouseStructureObject.Line.0"));
-        
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("check in different function Heading :=> " + window.localStorage.getItem("HouseStructureObject.Heading"));
+            alert("check in different function Line 0 :=> " + window.localStorage.getItem("HouseStructureObject.Line.0"));
+        }
+
         window.localStorage.setItem("KitchenObject.Heading", "Kitchen");
 
         var i = 0;
@@ -130,11 +225,162 @@ var PdfWriteDataUtilsModule = (function () {
             window.localStorage.setItem(currentKey, currentItem + " : " +
                 document.getElementById(GlobalWebClientModule.kitchenFormInputData_InputIds[i]).value);
 
-            i++
+            i++;
         }
 
     }
 
+
+    /**
+    * 
+    * Print the Bathroom Item Data values into PDF file
+    *
+    */
+
+    function printBathRoomItem() {
+
+        window.localStorage.setItem("BathRoomObject.Heading", "BathRoom");
+
+        var i = 0;
+
+        for (var currentItem of GlobalWebClientModule.bathroomFormInputData_InputLabels) {
+
+            var basicKey = "BathRoomObject.Line.";
+
+            var currentKey = basicKey + i.toString();
+
+            window.localStorage.setItem(currentKey, currentItem + " : " +
+                document.getElementById(GlobalWebClientModule.bathroomFormInputData_InputIds[i]).value);
+
+            i++;
+        }
+
+    }
+
+    /**
+    * 
+    * Print the Doors And Windows Data values into PDF file
+    *
+    */
+
+    function printDoorsAndWindowsItem() {
+
+        window.localStorage.setItem("DoorsAndWindowsObject.Heading", "Doors & Windows");
+
+        var i = 0;
+
+        for (var currentItem of GlobalWebClientModule.doorsandwindowsFormInputData_InputLabels) {
+
+            var basicKey = "DoorsAndWindowsObject.Line.";
+
+            var currentKey = basicKey + i.toString();
+
+            window.localStorage.setItem(currentKey, currentItem + " : " +
+                document.getElementById(GlobalWebClientModule.doorsandwindowsFormInputData_InputIds[i]).value);
+
+            i++;
+        }
+    }
+
+    /**
+    * 
+    * Print the Painting Data values into PDF file
+    *
+    */
+
+    function printPaintingItem() {
+
+        window.localStorage.setItem("PaintingObject.Heading", "Painting");
+
+        var i = 0;
+
+        for (var currentItem of GlobalWebClientModule.paintingFormInputData_InputLabels) {
+
+            var basicKey = "PaintingObject.Line.";
+
+            var currentKey = basicKey + i.toString();
+
+            window.localStorage.setItem(currentKey, currentItem + " : " +
+                document.getElementById(GlobalWebClientModule.paintingFormInputData_InputIds[i]).value);
+
+            i++;
+        }
+    }
+
+    /**
+    * 
+    * Print the Painting Data values into PDF file
+    *
+    */
+
+    function printFlooringItem() {
+
+        window.localStorage.setItem("FlooringObject.Heading", "Flooring");
+
+        var i = 0;
+
+        for (var currentItem of GlobalWebClientModule.flooringFormInputData_InputLabels) {
+
+            var basicKey = "FlooringObject.Line.";
+
+            var currentKey = basicKey + i.toString();
+
+            window.localStorage.setItem(currentKey, currentItem + " : " +
+                document.getElementById(GlobalWebClientModule.flooringFormInputData_InputIds[i]).value);
+
+            i++;
+        }
+    }
+
+    /**
+    * 
+    * Print the Electrical Data values into PDF file
+    *
+    */
+
+    function printElectricalItem() {
+
+        window.localStorage.setItem("ElectricalObject.Heading", "Electrical");
+
+        var i = 0;
+
+        for (var currentItem of GlobalWebClientModule.electricalFormInputData_InputLabels) {
+
+            var basicKey = "ElectricalObject.Line.";
+
+            var currentKey = basicKey + i.toString();
+
+            window.localStorage.setItem(currentKey, currentItem + " : " +
+                document.getElementById(GlobalWebClientModule.electricalFormInputData_InputIds[i]).value);
+
+            i++;
+        }
+    }
+
+    /**
+    * 
+    * Print the Miscellaneous Data values into PDF file
+    *
+    */
+
+    function printMiscellaneousItem() {
+
+        window.localStorage.setItem("MiscellaneousObject.Heading", "Miscellaneous");
+
+        var i = 0;
+
+        for (var currentItem of GlobalWebClientModule.miscellaneousFormInputData_InputLabels) {
+
+            var basicKey = "MiscellaneousObject.Line.";
+
+            var currentKey = basicKey + i.toString();
+
+            window.localStorage.setItem(currentKey, currentItem + " : " +
+                document.getElementById(GlobalWebClientModule.miscellaneousFormInputData_InputIds[i]).value);
+
+            i++;
+        }
+    }
 
     /**
     * 
@@ -144,10 +390,13 @@ var PdfWriteDataUtilsModule = (function () {
 
     function printGenericParagraphItem(objectName, noOfLines, pdfDoc) {
 
-        alert("GenericParagraph Item enter the function");
-        alert(window.localStorage.getItem(objectName.toString() + ".Heading"));
+        if (GlobalWebClientModule.bDebug == true) {
 
-        pdfDoc.setFont("Courier-Bold");
+            alert("GenericParagraph Item enter the function");
+            alert(window.localStorage.getItem(objectName.toString() + ".Heading"));
+        }
+
+        pdfDoc.setFont("Courier", "bold");
         pdfDoc.setFontSize(20);
 
         pdfDoc.text(
@@ -156,7 +405,7 @@ var PdfWriteDataUtilsModule = (function () {
 
         GlobalWebClientModule.currentLine_Y_Coordinate += GlobalWebClientModule.pdfDimensions_DistanceBetweenLinesAfterHeading;
 
-        pdfDoc.setFont("Times-Italic");
+        pdfDoc.setFont("Times", "italic");
         pdfDoc.setFontSize(15);
 
         let i = 0;
@@ -193,6 +442,13 @@ var PdfWriteDataUtilsModule = (function () {
 
         saveHouseStructureQuotationInput: saveHouseStructureQuotationInput,
         saveKitchenQuotationInput: saveKitchenQuotationInput,
+        saveBathRoomQuotationInput: saveBathRoomQuotationInput,
+        saveDoorsAndWindowsQuotationInput: saveDoorsAndWindowsQuotationInput,
+        savePaintingQuotationInput: savePaintingQuotationInput,
+        saveFlooringQuotationInput: saveFlooringQuotationInput,
+        saveElectricalQuotationInput: saveElectricalQuotationInput,
+        saveMiscellaneousQuotationInput: saveMiscellaneousQuotationInput,
+
     }
 
 })();

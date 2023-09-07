@@ -108,9 +108,10 @@ var GlobalWebClientModule = (function () {
     var pdfDimensions_LineStart = 20;
     var pdfDimensions_LineWidth = 175;
     var pdfDimensions_NumberOfCharsInALine = 56;
-    var pdfDimensions_DistanceBetweenLinesAfterHeading = 15;
+    var pdfDimensions_DistanceBetweenLinesAfterHeading = 12;
 
     var currentLine_Y_Coordinate = 30;
+    var newPage_Y_Coordinate = 25;
 
 
 
@@ -250,6 +251,7 @@ var GlobalWebClientModule = (function () {
 
         currentLine_Y_Coordinate: currentLine_Y_Coordinate,
 
+        newPage_Y_Coordinate: newPage_Y_Coordinate,
 
 
         // Dummy Result Objects

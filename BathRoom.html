@@ -27,11 +27,12 @@
 <body>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="./JavaScripts/UserAuthentication.js"></script>
     <script src="./JavaScripts/GlobalsWebClient.js"></script>
     <script src="./JavaScripts/RenderingHelperUtils.js"></script>
     <script src="./JavaScripts/CacheHelperUtils.js"></script>
-    <script src="./JavaScripts/BudgetQueryUpdateUtils.js"></script>
+    <script src="./JavaScripts/PdfWriteDataUtils.js"></script>
     <script src="./JavaScripts/HelperUtils.js"></script>
     <script src="./JavaScripts/FormDataInputHelperUtils.js"></script>
     <script src="./JavaScripts/WebClientRequestHelperUtils.js"></script>
@@ -167,7 +168,7 @@
             var formLayoutRatio = ["4", "6", "col-sm-1"];
             FormAdditionModule.renderInputFormDynamically("mainContentWindow", "bathroomAdditionForm", formLayoutRatio,
                 GlobalWebClientModule.bathroomFormInputData_InputIds, GlobalWebClientModule.bathroomFormInputData_InputTypes,
-                GlobalWebClientModule.bathroomFormInputData_InputLabels, "BudgetQueryUpdateUtilsModule.addBudgetRecordFromUserInput();",
+                GlobalWebClientModule.bathroomFormInputData_InputLabels, "PdfWriteDataUtilsModule.saveBathRoomQuotationInput();",
                 GlobalWebClientModule.bathroomFormInputData_SelectInputInvokeFunctions);
 
             //RenderingHelperUtilsModule.addSelectionOptions("Budget_Type", GlobalWebClientModule.budgetTypes);
