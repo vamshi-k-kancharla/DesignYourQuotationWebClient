@@ -11,7 +11,10 @@ var PdfWriteDataUtilsModule = (function () {
 
         printDesignsAndDrawingsItem();
 
-        alert("All the Required Input Values are present in the Quotation");
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("All the Required Input Values are present in the Quotation");
+        }
 
         printHouseStructureItem();
 
@@ -29,7 +32,10 @@ var PdfWriteDataUtilsModule = (function () {
 
         printKitchenItem();
 
-        alert("Finished printing Kitchen Items");
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("Finished printing Kitchen Items");
+        }
 
         location.assign("./Bathroom.html");
     }
@@ -45,7 +51,10 @@ var PdfWriteDataUtilsModule = (function () {
 
         printBathRoomItem();
 
-        alert("Finished printing BathRoom Items");
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("Finished printing BathRoom Items");
+        }
 
         location.assign("./DoorsAndWindows.html");
 
@@ -61,7 +70,10 @@ var PdfWriteDataUtilsModule = (function () {
 
         printDoorsAndWindowsItem();
 
-        alert("Finished printing Doors & Windows Items");
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("Finished printing Doors & Windows Items");
+        }
 
         location.assign("./Painting.html");
 
@@ -77,7 +89,10 @@ var PdfWriteDataUtilsModule = (function () {
 
         printPaintingItem();
 
-        alert("Finished printing Painting Items");
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("Finished printing Painting Items");
+        }
 
         location.assign("./Flooring.html");
 
@@ -93,7 +108,10 @@ var PdfWriteDataUtilsModule = (function () {
 
         printFlooringItem();
 
-        alert("Finished printing flooring Items");
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("Finished printing flooring Items");
+        }
 
         location.assign("./Electrical.html");
 
@@ -109,7 +127,10 @@ var PdfWriteDataUtilsModule = (function () {
 
         printElectricalItem();
 
-        alert("Finished printing Electrical Items");
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("Finished printing Electrical Items");
+        }
 
         location.assign("./Miscellaneous.html");
 
@@ -129,23 +150,65 @@ var PdfWriteDataUtilsModule = (function () {
         const pdfDoc = new jsPDF();
 
 
+        AddHeaderAndFooterToThePage(pdfDoc);
+
         printGenericParagraphItem("DesignsAndDrawingObject", 4, pdfDoc);
         printGenericParagraphItem("HouseStructureObject", 6, pdfDoc);
         printGenericParagraphItem("KitchenObject", 4, pdfDoc);
+
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("After printing Bath Room Object details : " + GlobalWebClientModule.currentLine_Y_Coordinate);
+        }
+
         printGenericParagraphItem("BathRoomObject", 4, pdfDoc);
 
-        pdfDoc.addPage("a4", "portrait");
-        GlobalWebClientModule.currentLine_Y_Coordinate = GlobalWebClientModule.newPage_Y_Coordinate;
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("After printing Bath Room Object details : " + GlobalWebClientModule.currentLine_Y_Coordinate);
+        }
 
         printGenericParagraphItem("DoorsAndWindowsObject", 4, pdfDoc);
+
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("After printing Doors & Windows Object details : " + GlobalWebClientModule.currentLine_Y_Coordinate);
+        }
+
         printGenericParagraphItem("PaintingObject", 2, pdfDoc);
         printGenericParagraphItem("FlooringObject", 5, pdfDoc);
         printGenericParagraphItem("ElectricalObject", 2, pdfDoc);
         printGenericParagraphItem("MiscellaneousObject", 4, pdfDoc);
 
-        alert("Finished Printing Miscellaneous Items");
+        if (GlobalWebClientModule.bDebug == true) {
+
+            alert("Finished Printing Miscellaneous Items");
+        }
 
         pdfDoc.save("SimpleQuotation.Pdf");
+
+    }
+
+    /**
+    * 
+    * Print the DesignAndDrawing values into PDF file
+    *
+    */
+
+    function AddHeaderAndFooterToThePage(pdfDoc)
+    {
+
+        pdfDoc.setFont("Times", "bold");
+        pdfDoc.setFontSize(25);
+
+        pdfDoc.text(GlobalWebClientModule.headerContent, GlobalWebClientModule.header_X_Coordinate,
+            GlobalWebClientModule.header_Y_Coordinate);
+
+        pdfDoc.setFont("Times", "normal");
+        pdfDoc.setFontSize(12);
+
+        pdfDoc.text(GlobalWebClientModule.footerContent, GlobalWebClientModule.footer_X_Coordinate,
+            GlobalWebClientModule.footer_Y_Coordinate);
 
     }
 
@@ -396,6 +459,8 @@ var PdfWriteDataUtilsModule = (function () {
             alert(window.localStorage.getItem(objectName.toString() + ".Heading"));
         }
 
+        checkStatusAndAddPage(pdfDoc);
+
         pdfDoc.setFont("Courier", "bold");
         pdfDoc.setFontSize(20);
 
@@ -405,8 +470,8 @@ var PdfWriteDataUtilsModule = (function () {
 
         GlobalWebClientModule.currentLine_Y_Coordinate += GlobalWebClientModule.pdfDimensions_DistanceBetweenLinesAfterHeading;
 
-        pdfDoc.setFont("Times", "italic");
-        pdfDoc.setFontSize(15);
+        pdfDoc.setFont("Times", "normal");
+        pdfDoc.setFontSize(13);
 
         let i = 0;
 
@@ -418,19 +483,71 @@ var PdfWriteDataUtilsModule = (function () {
                     " , Y-Coordinate " + GlobalWebClientModule.currentLine_Y_Coordinate);
             }
 
-            pdfDoc.text(window.localStorage.getItem(objectName + ".Line."+ i),
-                GlobalWebClientModule.pdfDimensions_LineStart,
-                GlobalWebClientModule.currentLine_Y_Coordinate);
+            var currentLineForDisplay = window.localStorage.getItem(objectName + ".Line." + i);
 
-            GlobalWebClientModule.currentLine_Y_Coordinate += GlobalWebClientModule.pdfDimensions_DistanceBetweenLines;
+            if (currentLineForDisplay.length <= GlobalWebClientModule.pdfDimensions_NumberOfCharsInALine) {
+
+                checkStatusAndAddPage(pdfDoc);
+
+                pdfDoc.setFont("Times", "normal");
+                pdfDoc.setFontSize(13);
+
+                pdfDoc.text(window.localStorage.getItem(objectName + ".Line." + i),
+                    GlobalWebClientModule.pdfDimensions_LineStart,
+                    GlobalWebClientModule.currentLine_Y_Coordinate);
+                GlobalWebClientModule.currentLine_Y_Coordinate += GlobalWebClientModule.pdfDimensions_DistanceBetweenLines;
+            }
+            else {
+
+                let startPos = 0;
+
+                while (startPos < currentLineForDisplay.length) {
+
+                    let endPos = (startPos + GlobalWebClientModule.pdfDimensions_NumberOfCharsInALine >
+                        currentLineForDisplay.length) ? currentLineForDisplay.length :
+                        startPos + GlobalWebClientModule.pdfDimensions_NumberOfCharsInALine;
+
+                    let currentSubPart = currentLineForDisplay.substring(startPos, endPos);
+
+                    checkStatusAndAddPage(pdfDoc);
+
+                    pdfDoc.setFont("Times", "normal");
+                    pdfDoc.setFontSize(13);
+
+                    pdfDoc.text(currentSubPart,
+                        GlobalWebClientModule.pdfDimensions_LineStart,
+                        GlobalWebClientModule.currentLine_Y_Coordinate);
+                    GlobalWebClientModule.currentLine_Y_Coordinate += GlobalWebClientModule.pdfDimensions_DistanceBetweenLines;
+
+                    startPos = endPos;
+                }
+                
+            }
 
             i++;
         }
 
         GlobalWebClientModule.currentLine_Y_Coordinate += GlobalWebClientModule.pdfDimensions_DistanceBetweenLinesAfterHeading;
-
     }
 
+
+    /**
+    * 
+    * Print the the generic quotation paragraph
+    *
+    */
+
+    function checkStatusAndAddPage(pdfDoc) {
+
+        if (GlobalWebClientModule.currentLine_Y_Coordinate >= 270) {
+
+            pdfDoc.addPage("a4", "portrait");
+
+            AddHeaderAndFooterToThePage(pdfDoc);
+            GlobalWebClientModule.currentLine_Y_Coordinate = GlobalWebClientModule.newPage_Y_Coordinate;
+        }
+
+    }
 
     /**
     * 

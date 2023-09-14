@@ -102,16 +102,24 @@ var GlobalWebClientModule = (function () {
     var miscellaneousFormLayoutRatio = ["2", "8", "col-sm-1"];
 
 
-    // Current User Context : Local cache
+    // PDF File related inputs & values
 
     var pdfDimensions_DistanceBetweenLines = 8;
     var pdfDimensions_LineStart = 20;
     var pdfDimensions_LineWidth = 175;
-    var pdfDimensions_NumberOfCharsInALine = 56;
+    var pdfDimensions_NumberOfCharsInALine = 75;
     var pdfDimensions_DistanceBetweenLinesAfterHeading = 12;
 
     var currentLine_Y_Coordinate = 30;
-    var newPage_Y_Coordinate = 25;
+    var newPage_Y_Coordinate = 35;
+
+    var headerContent = "SHR HOMES PVT LTD";
+    var header_X_Coordinate = 60;
+    var header_Y_Coordinate = 15;
+
+    var footerContent = "Address : Plot No 17,Sai Tulasi Enclave,Near QCity,Gowlidoddy,Hyderabad Telangana 500032";
+    var footer_X_Coordinate = 20;
+    var footer_Y_Coordinate = 295;
 
 
 
@@ -148,11 +156,9 @@ var GlobalWebClientModule = (function () {
 
         // Current User Context : Local cache
 
-		//currentUserName_Key : currentUserName_Key,
 
 
-
-        // Pdf Utils Document
+        // Pdf Utils Document Related
 
         pdfDoc: pdfDoc,
 
@@ -253,6 +259,14 @@ var GlobalWebClientModule = (function () {
 
         newPage_Y_Coordinate: newPage_Y_Coordinate,
 
+        headerContent: headerContent,
+        header_X_Coordinate: header_X_Coordinate,
+        header_Y_Coordinate: header_Y_Coordinate,
+
+        footerContent: footerContent,
+        footer_X_Coordinate: footer_X_Coordinate,
+        footer_Y_Coordinate: footer_Y_Coordinate,
+
 
         // Dummy Result Objects
 
@@ -267,4 +281,7 @@ var GlobalWebClientModule = (function () {
 
 	}
 
-}) ();
+})();
+
+
+

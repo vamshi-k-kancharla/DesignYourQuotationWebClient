@@ -167,17 +167,12 @@
 
         window.onload = function (event) {
 
-            /*const { jsPDF } = window.jspdf;
-            const GlobalWebClientModule.pdfDoc = new jsPDF();*/
-
             var formLayoutRatio = ["4", "6", "col-sm-1"];
             FormAdditionModule.renderInputFormDynamically("mainContentWindow", "houseStructureForm", formLayoutRatio,
                 GlobalWebClientModule.structureFormInputData_InputIds, GlobalWebClientModule.structureFormInputData_InputTypes,
                 GlobalWebClientModule.structureFormInputData_InputLabels,
                 "PdfWriteDataUtilsModule.saveHouseStructureQuotationInput();",
                 GlobalWebClientModule.structureFormInputData_SelectInputInvokeFunctions);
-
-            //RenderingHelperUtilsModule.addSelectionOptions("Budget_Type", GlobalWebClientModule.budgetTypes);
 
             RenderingHelperUtilsModule.changeHeightOfSideNavigators("mainContentWindow", "leftSideNavigator",
                 "rightSideNavigator", "headerNav", "footerNav", 1.01);
