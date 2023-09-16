@@ -10,14 +10,6 @@ var GlobalWebClientModule = (function () {
 
     // PDF doc Util : Local cache
 
-    // To do : pdfDoc object instatiation and usage across multiple files
-    //         Option1 : cache,
-    //         Option2 : global variable,
-    //         Option3 : import from other file
-    //         Option4 : Open an exclusive jsPDF from an existing pdf file.
-    //         Optoin5 : usual fall back option : store the values in cache and write and save them for the last file in
-    //         sequence.
-
     var pdfDoc;
 
     // Form Data Input Ids, Keys & Validation Reqs
@@ -110,8 +102,8 @@ var GlobalWebClientModule = (function () {
     var pdfDimensions_NumberOfCharsInALine = 75;
     var pdfDimensions_DistanceBetweenLinesAfterHeading = 12;
 
-    var currentLine_Y_Coordinate = 30;
-    var newPage_Y_Coordinate = 35;
+    var currentLine_Y_Coordinate = 40;
+    var newPage_Y_Coordinate = 40;
 
     var headerContent = "SHR HOMES PVT LTD";
     var header_X_Coordinate = 60;
@@ -120,6 +112,13 @@ var GlobalWebClientModule = (function () {
     var footerContent = "Address : Plot No 17,Sai Tulasi Enclave,Near QCity,Gowlidoddy,Hyderabad Telangana 500032";
     var footer_X_Coordinate = 20;
     var footer_Y_Coordinate = 295;
+
+
+    // Inventory Record Data
+
+    var BasicInventoryRecordData_InputLabels = ["Steel", "Cement", "Sand"];
+    var BasicInventoryRecordData_InputIdAppends = ["_Quantity", "_DateOfPurchase", "_Amount"];
+
 
 
 

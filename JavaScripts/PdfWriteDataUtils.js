@@ -461,7 +461,7 @@ var PdfWriteDataUtilsModule = (function () {
 
         checkStatusAndAddPage(pdfDoc);
 
-        pdfDoc.setFont("Courier", "bold");
+        pdfDoc.setFont("Arial", "bold");
         pdfDoc.setFontSize(20);
 
         pdfDoc.text(

@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Miscellaneous</title>
+    <title>BasicInventory</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -135,7 +135,7 @@
 
             <div id="mainContentWindow" class="col-sm-8" style="background-color: #D5D9D3; padding-left: 10%; padding-right: 10%; border-color:white; border:groove">
 
-                <h2 style="font: bold; text-align:left; padding-left:15%">MISCELLANEOUS</h2>
+                <h2 style="font: bold; text-align:left; padding-left:15%">Basic Inventory</h2>
                 <div style="padding-bottom: 6%"></div>
 
             </div>
@@ -185,10 +185,11 @@
         window.onload = function (event) {
 
             var formLayoutRatio = ["4", "6", "col-sm-1"];
-            FormAdditionModule.renderInputFormDynamically("mainContentWindow", "miscellaneousAdditionForm", formLayoutRatio,
-                GlobalWebClientModule.miscellaneousFormInputData_InputIds, GlobalWebClientModule.miscellaneousFormInputData_InputTypes,
-                GlobalWebClientModule.miscellaneousFormInputData_InputLabels, "PdfWriteDataUtilsModule.saveMiscellaneousQuotationInput();",
-                GlobalWebClientModule.miscellaneousFormInputData_SelectInputInvokeFunctions);
+            FormAdditionModule.renderInputFormDynamically("mainContentWindow", "kitchenAdditionForm", formLayoutRatio,
+                GlobalWebClientModule.kitchenFormInputData_InputIds, GlobalWebClientModule.kitchenFormInputData_InputTypes,
+                GlobalWebClientModule.kitchenFormInputData_InputLabels,
+                "PdfWriteDataUtilsModule.saveKitchenQuotationInput();",
+                GlobalWebClientModule.kitchenFormInputData_SelectInputInvokeFunctions);
 
             //RenderingHelperUtilsModule.addSelectionOptions("Budget_Type", GlobalWebClientModule.budgetTypes);
 
