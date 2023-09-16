@@ -589,7 +589,8 @@ var RenderingHelperUtilsModule = (function () {
         {
 
             var lableNodeClass = "control-label col-sm-" + formLayoutRatio[0];
-            var labelNode = RenderingHelperUtilsModule.createNewElementWithAttributes("LABEL", null, lableNodeClass, null);
+            var labelNode = RenderingHelperUtilsModule.createNewElementWithAttributes("LABEL", null, lableNodeClass,
+                null);
             labelNode.innerHTML = formInputLabel;
 
             divNode.appendChild(labelNode);
@@ -601,6 +602,55 @@ var RenderingHelperUtilsModule = (function () {
             inputDivNode.appendChild(childInputNode);
 
             divNode.appendChild(inputDivNode);
+        }
+
+        formNode.appendChild(divNode);
+        formNode.appendChild(RenderingHelperUtilsModule.createNewElementWithAttributes("DIV", null, null, "padding-bottom:20px"));
+    }
+
+    /**
+     *
+     * @param {DOMElement} formNode : Element id of Form Node
+     * @param {string} formInputType : Input Type of form node element to be added
+     * @param {string} formInputLabel : Label value of form Input node
+     * @param {string} formInputId : Form Input Element Id
+     * @param {Array} formLayoutRatio : Array of layout ratio for "Label: Input Node" of current form
+     * @param {string} inputOnChangeInvokeFunction : Form input onchange Event trigger function
+     *
+     */
+
+    function renderInventoryFormInputNode(formNode, formInputLabel, formInputIdAppends, formLayoutRatio, inputOnChangeInvokeFunction) {
+
+        var divNode = RenderingHelperUtilsModule.createNewElementWithAttributes("DIV", null, "form-group", null);
+        {
+
+            var lableNodeClass = "control-label col-sm-4";
+            var labelNode = RenderingHelperUtilsModule.createNewElementWithAttributes("LABEL", null, lableNodeClass,
+                "align:center");
+            labelNode.innerHTML = formInputLabel;
+
+            divNode.appendChild(labelNode);
+
+            var lableNodeClass1 = "control-label col-sm-8";
+            var labelNode1 = RenderingHelperUtilsModule.createNewElementWithAttributes("LABEL", null, lableNodeClass1,
+                "align:center");
+            labelNode1.innerHTML = "  ";
+
+            divNode.appendChild(labelNode1);
+
+            for (var currentIdAppend of formInputIdAppends) {
+
+                var currentNodeInputId = formInputLabel + currentIdAppend;
+
+                var inputDivNodeClass = "col-sm-" + formLayoutRatio[0];
+                var inputDivNode = RenderingHelperUtilsModule.createNewElementWithAttributes("DIV", null, inputDivNodeClass, null);
+
+                var childInputNode = createFormInputElement("text", currentIdAppend, currentNodeInputId, inputOnChangeInvokeFunction);
+                inputDivNode.appendChild(childInputNode);
+
+                divNode.appendChild(inputDivNode);
+            }
+
         }
 
         formNode.appendChild(divNode);
@@ -720,6 +770,9 @@ var RenderingHelperUtilsModule = (function () {
         renderFormInputNode: renderFormInputNode,
         createFormInputElement: createFormInputElement,
         renderFormSubmissionNode: renderFormSubmissionNode,
+
+
+        renderInventoryFormInputNode: renderInventoryFormInputNode,
 
     };
 

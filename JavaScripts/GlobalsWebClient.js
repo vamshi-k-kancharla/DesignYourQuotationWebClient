@@ -117,7 +117,7 @@ var GlobalWebClientModule = (function () {
     // Inventory Record Data
 
     var BasicInventoryRecordData_InputLabels = ["Steel", "Cement", "Sand"];
-    var BasicInventoryRecordData_InputIdAppends = ["_Quantity", "_DateOfPurchase", "_Amount"];
+    var BasicInventoryRecordData_InputIdAppends = ["Quantity", "DateOfPurchase", "Amount"];
 
 
 
@@ -245,6 +245,13 @@ var GlobalWebClientModule = (function () {
         miscellaneousFormLayoutRatio: miscellaneousFormLayoutRatio,
 
 
+        // Inventory Management : Basic Inventory
+
+        BasicInventoryRecordData_InputLabels: BasicInventoryRecordData_InputLabels,
+        BasicInventoryRecordData_InputIdAppends: BasicInventoryRecordData_InputIdAppends,
+
+
+
 
         // Current Context : Write to pdf generic parameters and contextual params
 
@@ -276,7 +283,6 @@ var GlobalWebClientModule = (function () {
         requiredKeysForCategorySummary: requiredKeysForCategorySummary,
 
         uploadFileContent_RequiredFields: uploadFileContent_RequiredFields,
-
 
 	}
 

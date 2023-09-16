@@ -77,6 +77,47 @@ var FormAdditionModule = (function () {
     }
 
     /**
+    *
+    * @param {string} mainContentWindowId  : Id of main content window of Summary grid
+    * @param {string} formId  : Input form Id to be used while creation
+    * @param {Array} formLayoutRatio  : Array with "Label : Input" ratio information
+    * @param {Array} formInputIdAppends  : Array of form input Id Appends
+    * @param {Array} formInputLabelArray  : Array of form input Labels
+    * @param {String} submitInvokeFunction  : Function to be invoked on Submit Button Click
+    *
+    */
+
+    function renderInventoryFormDynamically(mainContentWindowId, formId, formLayoutRatio, formInputIdAppends, formInputLabelArray,
+        submitInvokeFunction) {
+
+        var mainContentWindow = document.getElementById(mainContentWindowId);
+
+        // Form Node
+
+        var formNode = RenderingHelperUtilsModule.createNewElementWithAttributes("FORM", formId, "form-horizontal", "align-items: center;");
+        {
+            var currentIndex = 0;
+
+            for (var currentInputLabel of formInputLabelArray) {
+
+                RenderingHelperUtilsModule.renderInventoryFormInputNode(formNode,
+                    currentInputLabel, formInputIdAppends, formLayoutRatio, null);
+
+                currentIndex++;
+            }
+
+        }
+
+        mainContentWindow.appendChild(formNode);
+
+        // Form Submission Node
+
+        RenderingHelperUtilsModule.renderFormSubmissionNode(mainContentWindow, submitInvokeFunction, formLayoutRatio[2]);
+
+    }
+
+
+    /**
      * 
      * Expose the helper functions of add Labels module
      * 
@@ -86,7 +127,9 @@ var FormAdditionModule = (function () {
            
         addInputListItemToDivision: addInputListItemToDivision,
         removeFirstChildOfDivElement: removeFirstChildOfDivElement,
+
         renderInputFormDynamically: renderInputFormDynamically,
+        renderInventoryFormDynamically: renderInventoryFormDynamically,
 
     }
 
