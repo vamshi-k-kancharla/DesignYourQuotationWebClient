@@ -31,6 +31,7 @@
     <script src="./JavaScripts/UserAuthentication.js"></script>
     <script src="./JavaScripts/GlobalsWebClient.js"></script>
     <script src="./JavaScripts/RenderingHelperUtils.js"></script>
+    <script src="./JavaScripts/RenderingInventoryFormUtils.js"></script>
     <script src="./JavaScripts/CacheHelperUtils.js"></script>
     <script src="./JavaScripts/PdfWriteDataUtils.js"></script>
     <script src="./JavaScripts/HelperUtils.js"></script>
@@ -187,6 +188,7 @@
             var formLayoutRatio = ["4", "6", "col-sm-1"];
             FormAdditionModule.renderInventoryFormDynamically("mainContentWindow", "basicInventoryAdditionForm", formLayoutRatio,
                 GlobalWebClientModule.BasicInventoryRecordData_InputIdAppends,
+                GlobalWebClientModule.BasicInventoryRecordData_InputIdAppends_FormInputTypes,
                 GlobalWebClientModule.BasicInventoryRecordData_InputLabels,
                 "PdfWriteDataUtilsModule.saveKitchenQuotationInput();");
 

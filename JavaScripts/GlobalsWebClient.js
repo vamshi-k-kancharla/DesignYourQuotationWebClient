@@ -118,6 +118,7 @@ var GlobalWebClientModule = (function () {
 
     var BasicInventoryRecordData_InputLabels = ["Steel", "Cement", "Sand"];
     var BasicInventoryRecordData_InputIdAppends = ["Quantity", "DateOfPurchase", "Amount"];
+    var BasicInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "date", "text"];
 
 
 
@@ -249,6 +250,7 @@ var GlobalWebClientModule = (function () {
 
         BasicInventoryRecordData_InputLabels: BasicInventoryRecordData_InputLabels,
         BasicInventoryRecordData_InputIdAppends: BasicInventoryRecordData_InputIdAppends,
+        BasicInventoryRecordData_InputIdAppends_FormInputTypes: BasicInventoryRecordData_InputIdAppends_FormInputTypes,
 
 
 

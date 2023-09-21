@@ -87,8 +87,8 @@ var FormAdditionModule = (function () {
     *
     */
 
-    function renderInventoryFormDynamically(mainContentWindowId, formId, formLayoutRatio, formInputIdAppends, formInputLabelArray,
-        submitInvokeFunction) {
+    function renderInventoryFormDynamically(mainContentWindowId, formId, formLayoutRatio, formInputIdAppends,
+        formInputTypes, formInputLabelArray, submitInvokeFunction) {
 
         var mainContentWindow = document.getElementById(mainContentWindowId);
 
@@ -100,8 +100,8 @@ var FormAdditionModule = (function () {
 
             for (var currentInputLabel of formInputLabelArray) {
 
-                RenderingHelperUtilsModule.renderInventoryFormInputNode(formNode,
-                    currentInputLabel, formInputIdAppends, formLayoutRatio, null);
+                RenderingInventoryFormUtilsModule.renderInventoryFormInputNode(formNode,
+                    currentInputLabel, formInputIdAppends, formInputTypes, formLayoutRatio, null);
 
                 currentIndex++;
             }
