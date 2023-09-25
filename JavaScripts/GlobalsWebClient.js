@@ -94,7 +94,8 @@ var GlobalWebClientModule = (function () {
     var miscellaneousFormLayoutRatio = ["2", "8", "col-sm-1"];
 
 
-    // PDF File related inputs & values
+
+    // PDF Authoring related inputs & values
 
     var pdfDimensions_DistanceBetweenLines = 8;
     var pdfDimensions_LineStart = 20;
@@ -114,11 +115,30 @@ var GlobalWebClientModule = (function () {
     var footer_Y_Coordinate = 295;
 
 
-    // Inventory Record Data
 
-    var BasicInventoryRecordData_InputLabels = ["Steel", "Cement", "Sand"];
-    var BasicInventoryRecordData_InputIdAppends = ["Quantity", "DateOfPurchase", "Amount"];
-    var BasicInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "date", "text"];
+    // Basic Inventory Record Data
+
+    var BasicInventoryRecordData_InputLabels = ["Steel", "Cement", "Sand", "20mm Metal", "40mm Metal", "Robo Sand", "Red Mud"];
+    var BasicInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
+    var BasicInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
+
+    // Bricks Inventory Record Data
+
+    var BricksInventoryRecordData_InputLabels = ["Granite Stones", "Red Bricks"];
+    var BricksInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
+    var BricksInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
+
+    // Electrical Inventory Record Data
+
+    var ElectricalInventoryRecordData_InputLabels = ["Slab_Items", "Inner Wall Items", "Generic Items", "Wires", "Switches"];
+    var ElectricalInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
+    var ElectricalInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
+
+    // DoorsAndWindows Inventory Record Data
+
+    var DoorsAndWindowsInventoryRecordData_InputLabels = ["Door Frames", "Window Frames", "Window Grills", "UPVC Windows And Doors", "Flush Doors", "Teak Doors", "WPC Doors", "Door Fittings", "Window Fittings"];
+    var DoorsAndWindowsInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
+    var DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
 
 
 
@@ -252,6 +272,23 @@ var GlobalWebClientModule = (function () {
         BasicInventoryRecordData_InputIdAppends: BasicInventoryRecordData_InputIdAppends,
         BasicInventoryRecordData_InputIdAppends_FormInputTypes: BasicInventoryRecordData_InputIdAppends_FormInputTypes,
 
+        // Inventory Management : Bricks Inventory
+
+        BricksInventoryRecordData_InputLabels: BricksInventoryRecordData_InputLabels,
+        BricksInventoryRecordData_InputIdAppends: BricksInventoryRecordData_InputIdAppends,
+        BricksInventoryRecordData_InputIdAppends_FormInputTypes: BricksInventoryRecordData_InputIdAppends_FormInputTypes,
+
+        // Inventory Management : Electrical Inventory
+
+        ElectricalInventoryRecordData_InputLabels: ElectricalInventoryRecordData_InputLabels,
+        ElectricalInventoryRecordData_InputIdAppends: ElectricalInventoryRecordData_InputIdAppends,
+        ElectricalInventoryRecordData_InputIdAppends_FormInputTypes: ElectricalInventoryRecordData_InputIdAppends_FormInputTypes,
+
+        // Inventory Management : Doors & Windows Inventory
+
+        DoorsAndWindowsInventoryRecordData_InputLabels: DoorsAndWindowsInventoryRecordData_InputLabels,
+        DoorsAndWindowsInventoryRecordData_InputIdAppends: DoorsAndWindowsInventoryRecordData_InputIdAppends,
+        DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes: DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes,
 
 
 
@@ -274,6 +311,7 @@ var GlobalWebClientModule = (function () {
         footerContent: footerContent,
         footer_X_Coordinate: footer_X_Coordinate,
         footer_Y_Coordinate: footer_Y_Coordinate,
+
 
 
         // Dummy Result Objects

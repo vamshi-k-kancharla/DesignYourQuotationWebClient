@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>BasicInventory</title>
+    <title>BricksInventory</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -139,7 +139,7 @@
 
             <div id="mainContentWindow" class="col-sm-8" style="background-color: #D5D9D3; padding-left: 10%; padding-right: 10%; border-color:white; border:groove">
 
-                <h2 style="font: bold; text-align:left; padding-left:15%">Basic Inventory</h2>
+                <h2 style="font: bold; text-align:left; padding-left:15%">Bricks Inventory</h2>
                 <div style="padding-bottom: 6%"></div>
 
             </div>
@@ -189,10 +189,10 @@
         window.onload = function (event) {
 
             var formLayoutRatio = ["4", "6", "col-sm-1"];
-            FormAdditionModule.renderInventoryFormDynamically("mainContentWindow", "basicInventoryAdditionForm", formLayoutRatio,
-                GlobalWebClientModule.BasicInventoryRecordData_InputIdAppends,
-                GlobalWebClientModule.BasicInventoryRecordData_InputIdAppends_FormInputTypes,
-                GlobalWebClientModule.BasicInventoryRecordData_InputLabels,
+            FormAdditionModule.renderInventoryFormDynamically("mainContentWindow", "bricksInventoryAdditionForm", formLayoutRatio,
+                GlobalWebClientModule.BricksInventoryRecordData_InputIdAppends,
+                GlobalWebClientModule.BricksInventoryRecordData_InputIdAppends_FormInputTypes,
+                GlobalWebClientModule.BricksInventoryRecordData_InputLabels,
                 "PdfWriteDataUtilsModule.saveKitchenQuotationInput();");
 
             //RenderingHelperUtilsModule.addSelectionOptions("Budget_Type", GlobalWebClientModule.budgetTypes);
