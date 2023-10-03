@@ -140,6 +140,23 @@ var GlobalWebClientModule = (function () {
     var DoorsAndWindowsInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
     var DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
 
+    // Plumbing Inventory Record Data
+
+    var PlumbingInventoryRecordData_InputLabels = ["Plumbing And Sanitory", "Sink", "Granite", "Tiles Flooring", "Wall Tiles Bathroom", "Wall Tiles Kitchen"];
+    var PlumbingInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
+    var PlumbingInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
+
+    // Painting Inventory Record Data
+
+    var PaintingInventoryRecordData_InputLabels = ["Lappam", "Putty"];
+    var PaintingInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
+    var PaintingInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
+
+    // Miscellaneous Inventory Record Data
+
+    var MiscellaneousInventoryRecordData_InputLabels = ["Gova Items And Labour", "Fall Ceiling", "Gate", "Railing"];
+    var MiscellaneousInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
+    var MiscellaneousInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
 
 
 
@@ -290,6 +307,21 @@ var GlobalWebClientModule = (function () {
         DoorsAndWindowsInventoryRecordData_InputIdAppends: DoorsAndWindowsInventoryRecordData_InputIdAppends,
         DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes: DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes,
 
+        // Inventory Management : Plumbing Inventory
+
+        PlumbingInventoryRecordData_InputLabels: PlumbingInventoryRecordData_InputLabels,
+        PlumbingInventoryRecordData_InputIdAppends: PlumbingInventoryRecordData_InputIdAppends,
+        PlumbingInventoryRecordData_InputIdAppends_FormInputTypes: PlumbingInventoryRecordData_InputIdAppends_FormInputTypes,
+
+        // Inventory Management : Painting Inventory
+
+        PaintingInventoryRecordData_InputLabels: PaintingInventoryRecordData_InputLabels,
+        PaintingInventoryRecordData_InputIdAppends: PaintingInventoryRecordData_InputIdAppends,
+        PaintingInventoryRecordData_InputIdAppends_FormInputTypes: PaintingInventoryRecordData_InputIdAppends_FormInputTypes,
+
+        MiscellaneousInventoryRecordData_InputLabels: MiscellaneousInventoryRecordData_InputLabels,
+        MiscellaneousInventoryRecordData_InputIdAppends: MiscellaneousInventoryRecordData_InputIdAppends,
+        MiscellaneousInventoryRecordData_InputIdAppends_FormInputTypes: MiscellaneousInventoryRecordData_InputIdAppends_FormInputTypes,
 
 
         // Current Context : Write to pdf generic parameters and contextual params
