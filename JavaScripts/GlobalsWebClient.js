@@ -3,9 +3,9 @@ var GlobalWebClientModule = (function () {
 
     // Globals & Configs
 
-    var bDebug = false;
+    var bDebug = true;
     var bCurrentDebugFlag = true;
-    var webServerPrefix = "http://127.0.0.1:4501/?";
+    var webServerPrefix = "http://127.0.0.1:4500/?";
     var imageResourcePath = "./Resources/Pictures/";
 
     // PDF doc Util : Local cache
@@ -160,25 +160,7 @@ var GlobalWebClientModule = (function () {
 
 
 
-    // Budget Record Data
 
-    var budgetRecordData_InputIds = ["BudgetName", "Budget_Type", "Place", "StartDate", "EndDate", "Amount"];
-    var budgetRecordData_Keys = ["Budget_Id", "BudgetName", "Budget_Type", "Place", "StartDate", "EndDate", "Amount", "UserName"];
-    var budgetRecordData_RequiredKeys = ["Budget_Id", "BudgetName", "Budget_Type", "Place", "StartDate", "EndDate", "Amount", "UserName"];
-
-
-
-    // dummy Result Object For <Key, Value> Pairs display
-
-    var currentBudgetId_Dummy = "BudgetId_46013020198516384440";
-    var dummyResultObject_SummaryDetails = { currentCategory: "dummy", noOfExpenses: "100", expenditure: "4500" };
-    var dummyResultObject_ExpenseDetails = { merchantName: "Subway", place: "Hyderabad", expenditure: "200" };
-
-    var requiredKeysForCategorySummary = ["Expenditure", "NumOfExpenses"];
-
-    // File Upload JSON Content Globals
-
-    var uploadFileContent_RequiredFields = ["FileType", "FileData"];
 
     // Expose local variables for global access
 
@@ -210,10 +192,6 @@ var GlobalWebClientModule = (function () {
         userAuthenticationData_InputIds: userAuthenticationData_InputIds,
         userAuthenticationData_Keys: userAuthenticationData_Keys,
         userAuthenticationData_RequiredKeys: userAuthenticationData_RequiredKeys,
-
-        budgetRecordData_InputIds: budgetRecordData_InputIds,
-        budgetRecordData_Keys: budgetRecordData_Keys,
-        budgetRecordData_RequiredKeys: budgetRecordData_RequiredKeys,
 
 
 
@@ -343,18 +321,6 @@ var GlobalWebClientModule = (function () {
         footerContent: footerContent,
         footer_X_Coordinate: footer_X_Coordinate,
         footer_Y_Coordinate: footer_Y_Coordinate,
-
-
-
-        // Dummy Result Objects
-
-        currentBudgetId_Dummy: currentBudgetId_Dummy,
-        dummyResultObject_SummaryDetails: dummyResultObject_SummaryDetails,
-        dummyResultObject_ExpenseDetails: dummyResultObject_ExpenseDetails,
-
-        requiredKeysForCategorySummary: requiredKeysForCategorySummary,
-
-        uploadFileContent_RequiredFields: uploadFileContent_RequiredFields,
 
 	}
 

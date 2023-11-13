@@ -68,6 +68,55 @@ var FormDataInputHelperUtilsModule = (function () {
         return true;
     }
 
+    /**
+     * 
+     * @param {String} uniqueInputId  : Unique Id to be used for creating data object record from User Input
+     * @param {Array} dataInputIds  : Array of input ids of HTML Elements for form data input processing
+     * @param {Array} dataObjectKeys  : Array of dataObject Keys for which dataObjectMap needs to be created
+     * 
+     * @returns {Map} dataObjectMap: DataObjectMap consisting of processed Form data
+     *
+    */
+
+    function processInventoryFormInputData(currentInputId, inputIdAppends, inputItemTypes) {
+
+        var dataObjectMap = new Map();
+
+        for (var currentInputIdAppend of inputIdAppends) {
+
+            var currentInputFullId = currentInputId + "_" + currentInputIdAppend;
+
+            if (GlobalWebClientModule.bDebug == true) {
+
+                alert("processInventoryFormInputData -> currentInputFullId = " + currentInputFullId);
+            }
+
+            if (!HelperUtilsModule.valueDefined(document.getElementById(currentInputFullId))) {
+
+                continue;
+            }
+
+            var currentInputValue = document.getElementById(currentInputFullId).value;
+
+            if (GlobalWebClientModule.bDebug == true) {
+
+                alert("currentInputValue = " + currentInputValue);
+            }
+
+            var inputValidationPatternRegExp = /[^a-z,^A-Z,^0-9,^.,^,,^\s,^@,^_,^\/,^-]/g;
+            if (currentInputValue.search(inputValidationPatternRegExp) != -1) {
+
+                alert("Invalid input entered..Only allowed characters are => (alphaNumeric, '.',',',' ','@','_','/','-'), Invalid Input => " +
+                    currentInputValue);
+                return null;
+            }
+
+            dataObjectMap.set(currentInputIdAppend, currentInputValue);
+        }
+
+        return dataObjectMap;
+    }
+
     /****************************************************************************************
         Reveal private methods & variables
     *****************************************************************************************/
@@ -75,7 +124,8 @@ var FormDataInputHelperUtilsModule = (function () {
     return {
 
         processFormInputData: processFormInputData,
-        checkForRequiredInputData: checkForRequiredInputData
+        checkForRequiredInputData: checkForRequiredInputData,
+        processInventoryFormInputData: processInventoryFormInputData
 
     };
 
