@@ -3,7 +3,7 @@ var GlobalWebClientModule = (function () {
 
     // Globals & Configs
 
-    var bDebug = true;
+    var bDebug = false;
     var bCurrentDebugFlag = true;
     var webServerPrefix = "http://127.0.0.1:4500/?";
     var imageResourcePath = "./Resources/Pictures/";
@@ -125,40 +125,26 @@ var GlobalWebClientModule = (function () {
     // Bricks Inventory Record Data
 
     var BricksInventoryRecordData_InputLabels = ["Granite Stones", "Red Bricks"];
-    var BricksInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
-    var BricksInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
 
     // Electrical Inventory Record Data
 
     var ElectricalInventoryRecordData_InputLabels = ["Slab_Items", "Inner Wall Items", "Generic Items", "Wires", "Switches"];
-    var ElectricalInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
-    var ElectricalInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
 
     // DoorsAndWindows Inventory Record Data
 
     var DoorsAndWindowsInventoryRecordData_InputLabels = ["Door Frames", "Window Frames", "Window Grills", "UPVC Windows And Doors", "Flush Doors", "Teak Doors", "WPC Doors", "Door Fittings", "Window Fittings"];
-    var DoorsAndWindowsInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
-    var DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
 
     // Plumbing Inventory Record Data
 
     var PlumbingInventoryRecordData_InputLabels = ["Plumbing And Sanitory", "Sink", "Granite", "Tiles Flooring", "Wall Tiles Bathroom", "Wall Tiles Kitchen"];
-    var PlumbingInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
-    var PlumbingInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
 
     // Painting Inventory Record Data
 
     var PaintingInventoryRecordData_InputLabels = ["Lappam", "Putty"];
-    var PaintingInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
-    var PaintingInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
 
     // Miscellaneous Inventory Record Data
 
     var MiscellaneousInventoryRecordData_InputLabels = ["Gova Items And Labour", "Fall Ceiling", "Gate", "Railing"];
-    var MiscellaneousInventoryRecordData_InputIdAppends = ["Quantity", "PricePerUnit", "DateOfPurchase", "Amount"];
-    var MiscellaneousInventoryRecordData_InputIdAppends_FormInputTypes = ["text", "text", "date", "text"];
-
-
 
 
 
@@ -270,36 +256,26 @@ var GlobalWebClientModule = (function () {
         // Inventory Management : Bricks Inventory
 
         BricksInventoryRecordData_InputLabels: BricksInventoryRecordData_InputLabels,
-        BricksInventoryRecordData_InputIdAppends: BricksInventoryRecordData_InputIdAppends,
-        BricksInventoryRecordData_InputIdAppends_FormInputTypes: BricksInventoryRecordData_InputIdAppends_FormInputTypes,
 
         // Inventory Management : Electrical Inventory
 
         ElectricalInventoryRecordData_InputLabels: ElectricalInventoryRecordData_InputLabels,
-        ElectricalInventoryRecordData_InputIdAppends: ElectricalInventoryRecordData_InputIdAppends,
-        ElectricalInventoryRecordData_InputIdAppends_FormInputTypes: ElectricalInventoryRecordData_InputIdAppends_FormInputTypes,
 
         // Inventory Management : Doors & Windows Inventory
 
         DoorsAndWindowsInventoryRecordData_InputLabels: DoorsAndWindowsInventoryRecordData_InputLabels,
-        DoorsAndWindowsInventoryRecordData_InputIdAppends: DoorsAndWindowsInventoryRecordData_InputIdAppends,
-        DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes: DoorsAndWindowsInventoryRecordData_InputIdAppends_FormInputTypes,
 
         // Inventory Management : Plumbing Inventory
 
         PlumbingInventoryRecordData_InputLabels: PlumbingInventoryRecordData_InputLabels,
-        PlumbingInventoryRecordData_InputIdAppends: PlumbingInventoryRecordData_InputIdAppends,
-        PlumbingInventoryRecordData_InputIdAppends_FormInputTypes: PlumbingInventoryRecordData_InputIdAppends_FormInputTypes,
 
         // Inventory Management : Painting Inventory
 
         PaintingInventoryRecordData_InputLabels: PaintingInventoryRecordData_InputLabels,
-        PaintingInventoryRecordData_InputIdAppends: PaintingInventoryRecordData_InputIdAppends,
-        PaintingInventoryRecordData_InputIdAppends_FormInputTypes: PaintingInventoryRecordData_InputIdAppends_FormInputTypes,
+
+        // Inventory Management : Miscellaneous
 
         MiscellaneousInventoryRecordData_InputLabels: MiscellaneousInventoryRecordData_InputLabels,
-        MiscellaneousInventoryRecordData_InputIdAppends: MiscellaneousInventoryRecordData_InputIdAppends,
-        MiscellaneousInventoryRecordData_InputIdAppends_FormInputTypes: MiscellaneousInventoryRecordData_InputIdAppends_FormInputTypes,
 
 
         // Current Context : Write to pdf generic parameters and contextual params

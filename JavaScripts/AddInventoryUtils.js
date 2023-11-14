@@ -7,14 +7,49 @@ var AddInventoryUtilsModule = (function () {
     *
     */
 
-    function addBricksInventoryItems(){
+    function addBasicInventoryItems() {
+
+        addInventoryItems(GlobalWebClientModule.BasicInventoryRecordData_InputLabels, "Basic");
+    }
+
+    function addBricksInventoryItems() {
+
+        addInventoryItems(GlobalWebClientModule.BricksInventoryRecordData_InputLabels, "Bricks");
+    }
+
+    function addDoorsAndWindowsInventoryItems() {
+
+        addInventoryItems(GlobalWebClientModule.DoorsAndWindowsInventoryRecordData_InputLabels, "DoorsAndWindows");
+    }
+
+    function addElectricalInventoryItems() {
+
+        addInventoryItems(GlobalWebClientModule.ElectricalInventoryRecordData_InputLabels, "Electrical");
+    }
+
+    function addMiscellaneousInventoryItems() {
+
+        addInventoryItems(GlobalWebClientModule.MiscellaneousInventoryRecordData_InputLabels, "Miscellaneous");
+    }
+
+    function addPaintingInventoryItems() {
+
+        addInventoryItems(GlobalWebClientModule.PaintingInventoryRecordData_InputLabels, "Painting");
+    }
+
+    function addPlumbingInventoryItems() {
+
+        addInventoryItems(GlobalWebClientModule.PlumbingInventoryRecordData_InputLabels, "Plumbing");
+    }
+
+    function addInventoryItems(inputInventoryRecordData, inputGroupName){
 
         if (GlobalWebClientModule.bDebug == true) {
 
-            alert("Adding the bricks Inventory items from form input layout");
+            alert("Adding Inventory items from form input layout of Group " + inputGroupName);
         }
 
-        for (var currentInputId of GlobalWebClientModule.BricksInventoryRecordData_InputLabels) {
+        for (var currentInputId of inputInventoryRecordData) {
 
             if (GlobalWebClientModule.bDebug == true) {
 
@@ -55,7 +90,14 @@ var AddInventoryUtilsModule = (function () {
 
     return {
 
+        addBasicInventoryItems: addBasicInventoryItems,
         addBricksInventoryItems: addBricksInventoryItems,
+        addDoorsAndWindowsInventoryItems: addDoorsAndWindowsInventoryItems,
+        addElectricalInventoryItems: addElectricalInventoryItems,
+        addMiscellaneousInventoryItems: addMiscellaneousInventoryItems,
+        addPaintingInventoryItems: addPaintingInventoryItems,
+        addPlumbingInventoryItems: addPlumbingInventoryItems,
+
     }
 
 
