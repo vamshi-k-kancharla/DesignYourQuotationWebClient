@@ -48,11 +48,13 @@ var UserAuthenticationModule = (function () {
         
         if (GlobalWebClientModule.bDebug == true) {
 
+            /*
             alert("UserName stored in Local Cache: " + window.localStorage.getItem(GlobalWebClientModule.currentUserName_Key));
             alert("Current BudgetId Stored in Local Cache: " + window.localStorage.getItem(GlobalWebClientModule.currentBudget_Id_Key));
+            */
         }
 
-        document.location.replace("./UserBudgets.html");
+        document.location.replace("./BasicInventory.html");
     }
 
     function postUserAuthentication_FailureCallback(webReqResponse, userAuthenticationDataMap) {

@@ -16,15 +16,15 @@ var GlobalWebClientModule = (function () {
 
     // User Registration Data
 
-    var userRegistrationData_InputIds = ["UserType", "Name", "Location", "Email", "Address", "UserName", "Password", "Repeat-Password"];
-    var userRegistrationData_Keys = ["User_Id", "UserType", "Name", "Location", "Email", "Address", "UserName", "Password", "Repeat-Password"];
-    var userRegistrationData_RequiredKeys = ["User_Id", "UserType", "Name", "Email", "Address", "UserName", "Password"];
+    var userRegistrationData_InputIds = ["UserType", "Name", "Email", "Address", "Password", "Repeat-Password"];
+    var userRegistrationData_Keys = ["UserId", "UserType", "Name", "Email", "Address", "Password", "Repeat-Password"];
+    var userRegistrationData_RequiredKeys = ["UserId", "UserType", "Name", "Email", "Address", "Password"];
 
     // User Authentication Data
 
-    var userAuthenticationData_InputIds = ["UserName", "Pwd"];
-    var userAuthenticationData_Keys = ["UserName", "Password"];
-    var userAuthenticationData_RequiredKeys = ["UserName", "Password"];
+    var userAuthenticationData_InputIds = ["Email", "Pwd"];
+    var userAuthenticationData_Keys = ["Email", "Password"];
+    var userAuthenticationData_RequiredKeys = ["Email", "Password"];
 
 
 
