@@ -94,6 +94,15 @@ var GlobalWebClientModule = (function () {
     var miscellaneousFormLayoutRatio = ["2", "8", "col-sm-1"];
 
 
+    // ExpenseAggregator Form Input Data
+
+    var expenseAggregatorFormInputData_InputLabels = ["Company Name", "Project Name", "Aggregator Name", "Created Date", "Total Amount"];
+    var expenseAggregatorFormInputData_InputIds = ["Company_Name", "Project_Name", "Aggregator_Name", "Created_Date", "Total_Amount"];
+    var expenseAggregatorFormInputData_Keys = ["CompanyName", "ProjectName", "AggregatorName", "CreatedDate", "TotalAmount"];
+    var expenseAggregatorFormInputData_InputTypes = ["text", "text", "text", "date", "text"];
+    var expenseAggregatorFormInputData_SelectInputInvokeFunctions = [null, null, null, null];
+    var expenseAggregatorFormLayoutRatio = ["2", "8", "col-sm-1"];
+
 
     // PDF Authoring related inputs & values
 
@@ -245,6 +254,18 @@ var GlobalWebClientModule = (function () {
         miscellaneousFormInputData_InputTypes: miscellaneousFormInputData_InputTypes,
         miscellaneousFormInputData_SelectInputInvokeFunctions: miscellaneousFormInputData_SelectInputInvokeFunctions,
         miscellaneousFormLayoutRatio: miscellaneousFormLayoutRatio,
+
+
+
+        // Expense Aggregator Form Input Data
+
+        expenseAggregatorFormInputData_InputLabels: expenseAggregatorFormInputData_InputLabels,
+        expenseAggregatorFormInputData_InputIds: expenseAggregatorFormInputData_InputIds,
+        expenseAggregatorFormInputData_Keys: expenseAggregatorFormInputData_Keys,
+        expenseAggregatorFormInputData_InputTypes: expenseAggregatorFormInputData_InputTypes,
+        expenseAggregatorFormInputData_SelectInputInvokeFunctions: expenseAggregatorFormInputData_SelectInputInvokeFunctions,
+        expenseAggregatorFormLayoutRatio: expenseAggregatorFormLayoutRatio,
+
 
 
         // Inventory Management : Basic Inventory
