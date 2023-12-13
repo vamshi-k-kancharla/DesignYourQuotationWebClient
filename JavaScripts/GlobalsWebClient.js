@@ -100,8 +100,18 @@ var GlobalWebClientModule = (function () {
     var expenseAggregatorFormInputData_InputIds = ["Company_Name", "Project_Name", "Aggregator_Name", "Created_Date", "Total_Amount"];
     var expenseAggregatorFormInputData_Keys = ["CompanyName", "ProjectName", "AggregatorName", "CreatedDate", "TotalAmount"];
     var expenseAggregatorFormInputData_InputTypes = ["text", "text", "text", "date", "text"];
-    var expenseAggregatorFormInputData_SelectInputInvokeFunctions = [null, null, null, null];
+    var expenseAggregatorFormInputData_SelectInputInvokeFunctions = [null, null, null, null, null];
     var expenseAggregatorFormLayoutRatio = ["2", "8", "col-sm-1"];
+
+
+    // Basic Expense Form Input Data
+
+    var expenseFormInputData_InputLabels = ["Company Name", "Project Name", "Aggregator Name", "Expense Name", "Expense Date", "Description", "Mode Of Payment", "Payment Amount"];
+    var expenseFormInputData_InputIds = ["Company_Name", "Project_Name", "Aggregator_Name", "Expense_Name", "Expense_Date", "Description", "Mode_Of_Payment", "Payment_Amount"];
+    var expenseFormInputData_Keys = ["CompanyName", "ProjectName", "AggregatorName", "ExpenseName", "ExpenseDate", "Description", "ModeOfPayment", "PaymentAmount"];
+    var expenseFormInputData_InputTypes = ["text", "text", "text", "text", "date", "text", "text", "text"];
+    var expenseFormInputData_SelectInputInvokeFunctions = [null, null, null, null, null, null, null, null];
+    var expenseFormLayoutRatio = ["2", "8", "col-sm-1"];
 
 
     // PDF Authoring related inputs & values
@@ -266,6 +276,14 @@ var GlobalWebClientModule = (function () {
         expenseAggregatorFormInputData_SelectInputInvokeFunctions: expenseAggregatorFormInputData_SelectInputInvokeFunctions,
         expenseAggregatorFormLayoutRatio: expenseAggregatorFormLayoutRatio,
 
+        // Basic Expense Form Input Data
+
+        expenseFormInputData_InputLabels: expenseFormInputData_InputLabels,
+        expenseFormInputData_InputIds: expenseFormInputData_InputIds,
+        expenseFormInputData_Keys: expenseFormInputData_Keys,
+        expenseFormInputData_InputTypes: expenseFormInputData_InputTypes,
+        expenseFormInputData_SelectInputInvokeFunctions: expenseFormInputData_SelectInputInvokeFunctions,
+        expenseFormLayoutRatio: expenseFormLayoutRatio,
 
 
         // Inventory Management : Basic Inventory

@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>ExpenseAggregator</title>
+    <title>ExpenseBasic</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +37,7 @@
     <script src="./JavaScripts/FormDataInputHelperUtils.js"></script>
     <script src="./JavaScripts/WebClientRequestHelperUtils.js"></script>
     <script src="./JavaScripts/FormAddition.js"></script>
-    <script src="./JavaScripts/ExpenseAggregatorUtils.js"></script>
+    <script src="./JavaScripts/ExpenseBasicUtils.js"></script>
 
     <nav id="headerNav" class="navbar navbar-inverse">
 
@@ -156,7 +156,7 @@
 
             <div id="mainContentWindow" class="col-sm-8" style="background-color: #D5D9D3; padding-left: 10%; padding-right: 10%; border-color:white; border:groove">
 
-                <h2 style="font: bold; text-align:left; padding-left:15%">ExpenseAggregator</h2>
+                <h2 style="font: bold; text-align:left; padding-left:15%">Expense Basic</h2>
                 <div style="padding-bottom: 6%"></div>
 
             </div>
@@ -206,11 +206,11 @@
         window.onload = function (event) {
 
             var formLayoutRatio = ["4", "6", "col-sm-1"];
-            FormAdditionModule.renderInputFormDynamically("mainContentWindow", "ExpenseAggregatorAdditionForm", formLayoutRatio,
-                GlobalWebClientModule.expenseAggregatorFormInputData_InputIds, GlobalWebClientModule.expenseAggregatorFormInputData_InputTypes,
-                GlobalWebClientModule.expenseAggregatorFormInputData_InputLabels,
-                "ExpenseAggregatorModule.expenseAggregatorCreation();",
-                GlobalWebClientModule.expenseAggregatorFormInputData_SelectInputInvokeFunctions);
+            FormAdditionModule.renderInputFormDynamically("mainContentWindow", "ExpenseBasicAdditionForm", formLayoutRatio,
+                GlobalWebClientModule.expenseFormInputData_InputIds, GlobalWebClientModule.expenseFormInputData_InputTypes,
+                GlobalWebClientModule.expenseFormInputData_InputLabels,
+                "ExpenseBasicModule.expenseCreation();",
+                GlobalWebClientModule.expenseFormInputData_SelectInputInvokeFunctions);
 
             //RenderingHelperUtilsModule.addSelectionOptions("Budget_Type", GlobalWebClientModule.budgetTypes);
 
