@@ -58,7 +58,10 @@ var UserRegistrationModule = (function () {
 
     function postUserSignup_SuccessCallback(webReqResponse) {
 
-        alert("User Registration was successful : " + webReqResponse);
+        alert("User Registration was successful : Now adding company record with project details.." + webReqResponse);
+
+        CompanyRegistrationModule.companyRegistration();
+
         document.location.replace("./HomePage.html");
     }
 

@@ -16,9 +16,9 @@ var GlobalWebClientModule = (function () {
 
     // User Registration Data
 
-    var userRegistrationData_InputIds = ["UserType", "Name", "Email", "Address", "Password", "Repeat-Password"];
-    var userRegistrationData_Keys = ["UserId", "UserType", "Name", "Email", "Address", "Password", "Repeat-Password"];
-    var userRegistrationData_RequiredKeys = ["UserId", "UserType", "Name", "Email", "Address", "Password"];
+    var userRegistrationData_InputIds = ["CompanyName", "ProjectName", "UserType", "UserName", "Email", "Address", "Password", "Repeat-Password"];
+    var userRegistrationData_Keys = ["UserId", "CompanyName", "ProjectName", "UserType", "UserName", "Email", "Address", "Password", "Repeat-Password"];
+    var userRegistrationData_RequiredKeys = ["CompanyName", "ProjectName", "UserId", "UserType", "UserName", "Email", "Address", "Password"];
 
     // User Authentication Data
 
@@ -26,7 +26,11 @@ var GlobalWebClientModule = (function () {
     var userAuthenticationData_Keys = ["Email", "Password"];
     var userAuthenticationData_RequiredKeys = ["Email", "Password"];
 
+    // Company Registration Data
 
+    var companyRegistrationData_InputIds = ["CompanyName", "ProjectName", "Email"];
+    var companyRegistrationData_Keys = ["CompanyId", "CompanyName", "ProjectName", "Email"];
+    var companyRegistrationData_RequiredKeys = ["CompanyName", "ProjectName", "CompanyId", "Email"];
 
 
     // House Structure Form Input Data
@@ -198,6 +202,9 @@ var GlobalWebClientModule = (function () {
         userAuthenticationData_Keys: userAuthenticationData_Keys,
         userAuthenticationData_RequiredKeys: userAuthenticationData_RequiredKeys,
 
+        companyRegistrationData_InputIds: companyRegistrationData_InputIds,
+        companyRegistrationData_Keys: companyRegistrationData_Keys,
+        companyRegistrationData_RequiredKeys: companyRegistrationData_RequiredKeys,
 
 
 
